@@ -1,8 +1,8 @@
 import React from 'react';
 import './App.css';
 
-import UserInput from '../components/Users/UserInput/UserInput';
-import UserOutput from '../components/Users/UserOutput/UserOutput';
+import Cockpit from '../components/Cockpit/Cockpit'
+import Users from '../components/Users/Users';
 
 class App extends React.Component {
 
@@ -42,48 +42,17 @@ class App extends React.Component {
   }
 
   render() {
-    const style = {
-      backgroundColor: "green",
-      color: "white",
-      font: "inherit",
-      border: "1px solid blue",
-      padding: "8px",
-      cursor: 'pointer'
-    }
 
     // PREPARE LIST
     let userList = null;
     if (this.state.showUsers) {
-      userList = (
-        <div>
-          {this.state.users.map((user, index) => {
-            return (
-              <UserOutput
-                key={user.id}
-                onClick={this.deleteUser.bind(this, index)}
-                onChange={this.changeName.bind(this, index)}
-                name={user.name} />)
-          })}
-        </div>
-      );
-
-      style.backgroundColor = "red";
-    }
-
-    const classes = [];
-    if (this.state.users.length <= 2) {
-      classes.push("red");
-    }
-    if (this.state.users.length <= 1) {
-      classes.push("bold");
+      userList = <Users users={this.state.users} onChange={this.changeName} onClick={this.deleteUser} />;
     }
 
     // BEGIN RENDER
     return (
       <div className="App">
-        <UserInput onChange={this.changeAllNames} />
-        <p className={classes.join(" ")}>TESTER</p>
-        <button style={style} onClick={this.toggleAllNames}>Toggle Users</button>
+        <Cockpit length={this.state.users.length} showUsers={this.state.showUsers} onClick={this.toggleAllNames} />
         {userList}
       </div>
     );
