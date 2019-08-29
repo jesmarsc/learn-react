@@ -1,10 +1,9 @@
 import React from 'react';
 
-const UserInput = ({ onChange, toggle }) => {
+const UserInput = ({ onChange }) => {
     return (
         <div>
             <input type='text' onChange={onChange} />
-            <button onClick={toggle}>Show/Hide Names</button>
         </div>
     )
 };
