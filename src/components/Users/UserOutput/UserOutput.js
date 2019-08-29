@@ -5,7 +5,7 @@ const UserOutput = ({ onChange, onClick, name }) => {
     return (
         <div className="UserOutput">
             <input type="text" onChange={onChange} value={name} />
-            <p onClick={onClick}>Greetings {name}, from the NetherWorld!</p>
+            <p onClick={onClick}>Greetings from the NetherWorld, {name}!</p>
         </div>
     )
 }

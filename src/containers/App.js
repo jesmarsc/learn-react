@@ -1,8 +1,8 @@
 import React from 'react';
 import './App.css';
 
-import UserInput from './UserInput/UserInput';
-import UserOutput from './UserOutput/UserOutput';
+import UserInput from '../components/Users/UserInput/UserInput';
+import UserOutput from '../components/Users/UserOutput/UserOutput';
 
 class App extends React.Component {
 
@@ -70,11 +70,19 @@ class App extends React.Component {
       style.backgroundColor = "red";
     }
 
+    const classes = [];
+    if (this.state.users.length <= 2) {
+      classes.push("red");
+    }
+    if (this.state.users.length <= 1) {
+      classes.push("bold");
+    }
+
     // BEGIN RENDER
     return (
       <div className="App">
         <UserInput onChange={this.changeAllNames} />
-        <p>wow!</p>
+        <p className={classes.join(" ")}>TESTER</p>
         <button style={style} onClick={this.toggleAllNames}>Toggle Users</button>
         {userList}
       </div>
