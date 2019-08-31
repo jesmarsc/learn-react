@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import './App.css';
 
 import Cockpit from '../components/Cockpit/Cockpit'
@@ -51,10 +51,10 @@ class App extends React.Component {
 
     // BEGIN RENDER
     return (
-      <div className="App">
-        <Cockpit length={this.state.users.length} showUsers={this.state.showUsers} onClick={this.toggleAllNames} />
+      <Fragment>
         {userList}
-      </div>
+        <Cockpit length={this.state.users.length} showUsers={this.state.showUsers} onClick={this.toggleAllNames} />
+      </Fragment>
     );
   }
 };
