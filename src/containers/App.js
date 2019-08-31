@@ -12,7 +12,7 @@ class App extends React.Component {
       { id: 2, name: 'Jones' },
       { id: 3, name: 'Bones' }
     ],
-    showUsers: false
+    showUsers: true
   }
 
   deleteUser = index => {
