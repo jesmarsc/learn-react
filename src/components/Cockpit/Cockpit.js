@@ -58,16 +58,4 @@ const Cockpit = ({ showUsers, onClick }) => {
     )
 }
 
-/*
-return (
-<div>
-        <Header as='h1' icon={{ name: 'users', circular: true }} content='Users' />
-        <Container text>
-            <p>The warming candidate trails into a whale. The displayed ego coasts past its arriving snag. The faulty worst matures. A razor dusts the postcard over the incapable residence.</p>
-        </Container>
-        <Button active={showUsers} onClick={onClick}>Toggle Users</Button>
-    </div>
-    );
-    */
-
 export default Cockpit;

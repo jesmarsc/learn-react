@@ -6,6 +6,11 @@ import Users from '../components/Users/Users';
 
 class App extends React.Component {
 
+  constructor(props) {
+    super(props);
+    console.log('[App.js] constructor');
+  }
+
   state = {
     users: [
       { id: 1, name: 'James' },
@@ -13,6 +18,15 @@ class App extends React.Component {
       { id: 3, name: 'Bones' }
     ],
     showUsers: true
+  }
+
+  static getDerivedStateFromProps(props, state) {
+    console.log('[App.js] getDerivedStateFromProps', props);
+    return state;
+  }
+
+  componentDidMount() {
+    console.log('[App.js] componentDidMount');
   }
 
   deleteUser = index => {
@@ -42,6 +56,7 @@ class App extends React.Component {
   }
 
   render() {
+    console.log('[App.js] render');
 
     // PREPARE LIST
     let userList = null;
